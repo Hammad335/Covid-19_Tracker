@@ -2,18 +2,16 @@ package com.codewithhamad.covid_19tracker;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.HorizontalScrollView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -21,12 +19,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.leo.simplearcloader.SimpleArcLoader;
-
-import org.eazegraph.lib.models.PieModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,8 +53,15 @@ public class AffectedCountries extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        // adding onClick on listView items
+        affectedCountriesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(getApplicationContext(), CountryDetails.class).putExtra("position", position));
+            }
+        });
 
-        // TODO: 3/9/2021 editSearch implementation
+        // implementing serach through textView
         editSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -68,7 +70,8 @@ public class AffectedCountries extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                adapter.getFilter().filter(s);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -79,10 +82,10 @@ public class AffectedCountries extends AppCompatActivity {
     }
 
     @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==android.R.id.home)
             finish();
-        return super.onContextItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     private void fetchData() {
