@@ -1,6 +1,7 @@
 package com.codewithhamad.covid_19tracker;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,6 +40,9 @@ public class AffectedCountries extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_affected_countries);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.affected_countries_toolbar_title);
+
 
         // initializing views
         editSearch= findViewById(R.id.editSearch);

@@ -17,7 +17,8 @@
         android:layout_marginTop="45dp"
         android:padding="5dp"
         app:cardElevation="22dp"
-        app:cardCornerRadius="18dp">
+        app:cardCornerRadius="18dp"
+        android:backgroundTint="@color/cardview_dark_background">
 
         <TextView
             android:id="@+id/country_Name"
@@ -28,7 +29,8 @@
             android:textSize="40sp"
             android:textStyle="bold|italic"
             android:padding="5dp"
-            android:layout_marginTop="35dp"/>
+            android:layout_marginTop="35dp"
+            android:textColor="@color/white"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +52,8 @@
                     android:layout_height="wrap_content"
                     android:text="Cases"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryCases"
@@ -59,10 +62,10 @@
                     android:text="0"
                     android:textAlignment="textEnd"
                     android:textSize="18sp"
-                    android:textColor="@color/color_one"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-light"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_alignParentEnd="true" />
             </RelativeLayout>
             <View
                 android:layout_width="match_parent"
@@ -85,7 +88,8 @@
                     android:layout_height="wrap_content"
                     android:text="Recovered"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryRecovered"
@@ -120,7 +124,8 @@
                     android:layout_height="wrap_content"
                     android:text="Critical"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryCritical"
@@ -155,7 +160,8 @@
                     android:layout_height="wrap_content"
                     android:text="Active"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryActive"
@@ -190,7 +196,8 @@
                     android:layout_height="wrap_content"
                     android:text="Today Cases"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryTodayCases"
@@ -225,7 +232,8 @@
                     android:layout_height="wrap_content"
                     android:text="Today Deaths"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countrytodayDeaths"
@@ -260,7 +268,8 @@
                     android:layout_height="wrap_content"
                     android:text="Total Deaths"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:textColor="@color/white"/>
 
                 <TextView
                     android:id="@+id/countryDeaths"

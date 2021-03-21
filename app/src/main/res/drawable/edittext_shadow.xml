@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <stroke android:color="@color/black" android:width="0.8dp"/>
     <item
         android:right="1dp"
         android:left="1dp"
@@ -9,7 +10,6 @@
         <shape android:shape="rectangle">
 
             <solid android:color="?attr/colorControlHighlight"/>
-            <stroke android:color="@color/black" android:width="0.8dp"/>
         </shape>
 
     </item>
